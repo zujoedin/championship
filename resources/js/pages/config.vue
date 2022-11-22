@@ -164,8 +164,16 @@ export default {
                 console.log(error);
             });
         },
-        deleteTeam(){
-
+        deleteTeam(index){
+           
+            let self = this
+            console.log(self.teams[index].id)
+            axios.post('/api/delete-team',{
+                id:self.teams[index].id,            
+            }).catch(function (error) {
+                console.log(error);
+            });
+     
         },
         deleteMortal(){
 

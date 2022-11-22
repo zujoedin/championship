@@ -16,7 +16,8 @@ class CreateMortalsTable extends Migration
         Schema::create('mortals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('score');
+            $table->integer('points');
+            $table->integer('additional_points');
         });
     }
 
