@@ -82,8 +82,7 @@ export default {
         getResults(){
             let self = this
             axios.post('/api/get-results',{
-            }).then(function (response) {      
-                console.log(response.data)        
+            }).then(function (response) {        
                 self.results = response.data
             }).catch(function (error) {
                 console.log(error);
