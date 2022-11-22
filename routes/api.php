@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\Settings\PasswordController;
 use App\Http\Controllers\Settings\ProfileController;
+use App\Http\Controllers\ConfigController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,7 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     Route::patch('settings/profile', [ProfileController::class, 'update']);
     Route::patch('settings/password', [PasswordController::class, 'update']);
+
 });
 
 Route::group(['middleware' => 'guest:api'], function () {
@@ -44,3 +46,20 @@ Route::group(['middleware' => 'guest:api'], function () {
     Route::post('oauth/{driver}', [OAuthController::class, 'redirect']);
     Route::get('oauth/{driver}/callback', [OAuthController::class, 'handleCallback'])->name('oauth.callback');
 });
+
+
+
+Route::post('/get-teams', [ConfigController::class, 'getTeams']);
+Route::post('/get-mortals', [ConfigController::class, 'getMortals']);
+Route::post('/get-pairs', [ConfigController::class, 'getPairs']);
+Route::post('/get-results', [ConfigController::class, 'getResults']);
+Route::post('/get-table', [ConfigController::class, 'getTable']);
+Route::post('/get-table-teams', [ConfigController::class, 'getTableTeams']);
+
+Route::post('/post-pair', [ConfigController::class, 'postPair']);
+Route::post('/post-mortal', [ConfigController::class, 'postMortal']);
+Route::post('/post-team', [ConfigController::class, 'postTeam']);
+Route::post('/post-result', [ConfigController::class, 'postResult']);
+
+Route::post('/add-additional-score', [ConfigController::class, 'addAdditionalScore']);
+Route::post('/reduce-additional-score', [ConfigController::class, 'reduceAdditionalScore']);

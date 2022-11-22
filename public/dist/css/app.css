@@ -13012,6 +13012,21 @@ svg:not(:root).svg-inline--fa {
 }
 
 
+.align-right[data-v-bb7a9770]{
+ text-align: right;
+}
+
+
+
+.text-white[data-v-7a54c19d]{
+    padding: 5px 10px;
+    margin-top: 8px;
+}
+select[data-v-7a54c19d],input[data-v-7a54c19d]{
+    font-size: 12px;
+}
+
+
 .settings-card .card-body {
   padding: 0;
 }

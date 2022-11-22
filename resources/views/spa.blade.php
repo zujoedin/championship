@@ -17,6 +17,9 @@ $appCss = mix('dist/css/app.css');
   <title>{{ config('app.name') }}</title>
 
   <link rel="stylesheet" href="{{ (str_starts_with($appCss, '//') ? 'http:' : '').$appCss }}">
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
 </head>
 <body>
   <div id="app"></div>
