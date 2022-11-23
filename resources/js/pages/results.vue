@@ -88,8 +88,15 @@ export default {
                 console.log(error);
             });
         },
-        deleteResult(){
-
+        deleteResult(index){
+            let self = this
+            axios.post('/api/delete-result',{
+                id:self.results[index].id,            
+            }).then(function (response) {
+                self.getResults()
+            }).catch(function (error) {
+                console.log(error);
+            });
         },
         addResult(){
             let self = this

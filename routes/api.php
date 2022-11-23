@@ -66,6 +66,6 @@ Route::post('/reduce-additional-score', [ConfigController::class, 'reduceAdditio
 
 
 Route::post('/delete-team', [ConfigController::class, 'deleteTeam']);
-Route::post('/delete-Mortal', [ConfigController::class, 'deleteMortal']);
+Route::post('/delete-mortal', [ConfigController::class, 'deleteMortal']);
 Route::post('/delete-result', [ConfigController::class, 'deleteResult']);
-Route::post('/delete-pair', [ConfigController::class, 'deletepPair']);
+Route::post('/delete-pair', [ConfigController::class, 'deletePair']);

@@ -167,19 +167,35 @@ export default {
         deleteTeam(index){
            
             let self = this
-            console.log(self.teams[index].id)
             axios.post('/api/delete-team',{
                 id:self.teams[index].id,            
+            }).then(function (response) {
+                self.getTeams()
             }).catch(function (error) {
                 console.log(error);
             });
      
         },
-        deleteMortal(){
-
+        deleteMortal(index){
+            let self = this
+            axios.post('/api/delete-mortal',{
+                id:self.mortals[index].id,            
+            }).then(function (response) {
+                self.getMortals()
+                self.getPairs()
+            }).catch(function (error) {
+                console.log(error);
+            });
         },
-        deletePair(){
-
+        deletePair(index){
+            let self = this
+            axios.post('/api/delete-pair',{
+                id:self.pairs[index].id,            
+            }).then(function (response) {
+                self.getPairs()
+            }).catch(function (error) {
+                console.log(error);
+            });
         },
         addPair(){
             let self = this
